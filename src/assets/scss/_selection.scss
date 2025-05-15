@@ -1,0 +1,6 @@
+@use "variables" as *;
+
+::selection {
+    color: $color-white;
+    background-color: $color-brown-hover;
+}

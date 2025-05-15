@@ -1,0 +1,12 @@
+@mixin breakpoint($value) {
+    @media (max-width: $value) {
+        @content;
+    }
+}
+
+@mixin line-clamp($value: 1) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $value;
+    overflow: hidden;
+}

@@ -1,0 +1,5 @@
+@use "entities" as *;
+
+.header {
+    z-index: $z-header;
+}

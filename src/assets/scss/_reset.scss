@@ -1,0 +1,65 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    outline: none;
+}
+
+img,
+svg {
+    display: block;
+}
+
+ul,
+ol,
+dl {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+button,
+input,
+textarea {
+    display: block;
+    font-family: inherit;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+iframe {
+    display: block;
+    border: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}

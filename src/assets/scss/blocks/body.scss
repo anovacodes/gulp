@@ -1,0 +1,15 @@
+@use "entities" as *;
+
+body {
+    font-family: $font-gilda;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: $line-height;
+    color: $color-dark;
+    background-color: $color-white;
+    margin: 0; 
+}
+
+
+
+
