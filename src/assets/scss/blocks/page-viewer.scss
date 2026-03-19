@@ -1,0 +1,139 @@
+@use "entities" as *;
+
+.page-viewer {
+    position: absolute;
+    left: 2rem;
+    bottom: 2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+    user-select: none;
+    z-index: 5000;
+
+    @include breakpoint($mobile-small) {
+        left: 0;
+        bottom: 0;
+        font-size: 1.4rem;
+    }
+
+    &--hidden &__inner {
+        transform: scale(0);
+        width: 0;
+    }
+
+    &--hidden &__list {
+        max-height: 0;
+    }
+
+    &__inner {
+        width: 30rem;
+        border-radius: .8rem;
+        background-color: #333;
+        box-shadow: .2rem .2rem .6rem rgba(0, 0, 0, .15);
+        transform-origin: bottom left;
+        transition: transform .4s ease,
+                    width .4s ease;
+
+        @include breakpoint($mobile-medium) {
+            width: 20rem;
+        }
+
+        @include breakpoint($mobile-small) {
+            width: 19rem;
+        }
+
+        @include breakpoint($mobile-extra-small) {
+            width: 15rem;
+        }
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.2rem 1.8rem .8rem;
+        border-bottom: .1rem solid rgba(255, 255, 255, .15);
+        color: #fff;
+
+        @include breakpoint($mobile-extra-small) {
+            padding: 1rem 1.2rem .8rem;
+        }
+    }
+
+    &__list {
+        max-height: 42svh;
+        overflow: hidden auto;
+        transition: max-height .4s ease;
+
+        &::-webkit-scrollbar {
+            &-track {
+                display: none;
+            }
+
+            &-thumb {
+                background-color: #727272;
+            }
+        }
+    }
+
+    &__item:last-child &__link {
+        padding-bottom: 1.2rem;
+
+        @include breakpoint($mobile-extra-small) {
+            padding-bottom: 1rem;
+        }
+    }
+
+    &__item:hover &__link {
+        color: #fff;
+        background-color: #555;
+        transition: background-color .15s ease,
+                    color .15s ease;
+    }
+
+    &__link {
+        display: block;
+        line-height: 1;
+        padding: .8rem 1.8rem;
+        color: #dddddd;
+
+        @include truncate;
+
+        @include breakpoint($mobile-extra-small) {
+            padding: .8rem 1.2rem;
+        }
+    }
+
+    &__button {
+        position: relative;
+        width: 3.6rem;
+        height: 3.6rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: .8rem;
+        background-color: #333;
+        box-shadow: .2rem .2rem .6rem rgba(0, 0, 0, .15);
+        transition: background-color .15s ease;
+
+        &::before {
+            content: "x";
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 2.2rem;
+            font-weight: 500;
+            line-height: 1;
+            color: #fff;
+
+            @include breakpoint($mobile-small) {
+                font-size: 1.6rem;
+            }
+        }
+
+        &:hover,
+        &:focus {
+            background-color: #555;
+        }
+    }
+}

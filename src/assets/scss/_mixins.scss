@@ -10,3 +10,9 @@
     -webkit-line-clamp: $value;
     overflow: hidden;
 }
+
+@mixin truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
